@@ -1,0 +1,246 @@
+object ScreenRec: TScreenRec
+  Left = 263
+  Height = 326
+  Top = 233
+  Width = 412
+  Caption = 'Kevin''s Screen Recorder'
+  ClientHeight = 326
+  ClientWidth = 412
+  DesignTimePPI = 94
+  OnCreate = FormCreate
+  LCLVersion = '2.0.8.0'
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 269
+    Top = 48
+    Width = 402
+    ActivePage = RecTab
+    TabIndex = 0
+    TabOrder = 0
+    object RecTab: TTabSheet
+      Caption = 'Recording'
+      ClientHeight = 239
+      ClientWidth = 392
+      object Label3: TLabel
+        Left = 16
+        Height = 18
+        Top = 8
+        Width = 37
+        Caption = 'Top X:'
+        ParentColor = False
+      end
+      object Label4: TLabel
+        Left = 17
+        Height = 18
+        Top = 44
+        Width = 36
+        Caption = 'Top Y:'
+        ParentColor = False
+      end
+      object RecX: TEdit
+        Left = 56
+        Height = 30
+        Top = 8
+        Width = 78
+        MaxLength = 4
+        NumbersOnly = True
+        TabOrder = 0
+      end
+      object RecY: TEdit
+        Left = 56
+        Height = 30
+        Top = 40
+        Width = 78
+        MaxLength = 4
+        NumbersOnly = True
+        TabOrder = 1
+      end
+      object CopyYBtn: TButton
+        Left = 136
+        Height = 24
+        Top = 44
+        Width = 73
+        Caption = 'Copy Y'
+        OnClick = CopyYBtnClick
+        TabOrder = 2
+      end
+      object Label5: TLabel
+        Left = 16
+        Height = 18
+        Top = 80
+        Width = 90
+        Caption = 'Recording size:'
+        ParentColor = False
+      end
+      object RecSize: TComboBox
+        Left = 112
+        Height = 30
+        Top = 72
+        Width = 169
+        ItemHeight = 0
+        Items.Strings = (
+          '800x600'
+          '1024x768'
+          '1280x720'
+          '1200x900'
+        )
+        TabOrder = 3
+        Text = '800x600'
+      end
+      object Label6: TLabel
+        Left = 17
+        Height = 18
+        Top = 112
+        Width = 58
+        Caption = 'Filename:'
+        ParentColor = False
+      end
+      object FLVFile: TEdit
+        Left = 80
+        Height = 30
+        Top = 104
+        Width = 272
+        TabOrder = 4
+        Text = '/tmp/test.flv'
+      end
+      object RecBtn: TButton
+        Left = 16
+        Height = 24
+        Top = 196
+        Width = 73
+        Caption = 'Start'
+        OnClick = RecBtnClick
+        TabOrder = 5
+      end
+      object StopBtn: TButton
+        Left = 104
+        Height = 24
+        Top = 196
+        Width = 73
+        Caption = 'Stop'
+        OnClick = StopBtnClick
+        TabOrder = 6
+      end
+      object KillBtn: TButton
+        Left = 192
+        Height = 24
+        Top = 196
+        Width = 73
+        Caption = 'Kill'
+        OnClick = KillBtnClick
+        TabOrder = 7
+      end
+      object PlayBtn: TButton
+        Left = 279
+        Height = 24
+        Top = 196
+        Width = 73
+        Caption = 'Play'
+        Enabled = False
+        OnClick = PlayBtnClick
+        TabOrder = 8
+      end
+      object Minute: TLabel
+        Left = 119
+        Height = 19
+        Top = 156
+        Width = 11
+        Caption = '0'
+        Font.Height = -16
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label7: TLabel
+        Left = 136
+        Height = 19
+        Top = 156
+        Width = 6
+        Caption = ':'
+        Font.Height = -16
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Second: TLabel
+        Left = 144
+        Height = 19
+        Top = 156
+        Width = 22
+        Caption = '00'
+        Font.Height = -16
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+    object VBoxTab: TTabSheet
+      Caption = 'VBox Y Calc'
+      ClientHeight = 239
+      ClientWidth = 392
+      object Label1: TLabel
+        Left = 8
+        Height = 18
+        Top = 8
+        Width = 131
+        Caption = 'Y position of window: '
+        ParentColor = False
+      end
+      object VBoxY: TEdit
+        Left = 144
+        Height = 30
+        Top = 0
+        Width = 78
+        MaxLength = 4
+        NumbersOnly = True
+        TabOrder = 0
+      end
+      object VCButton: TButton
+        Left = 8
+        Height = 24
+        Top = 43
+        Width = 73
+        Caption = 'Calculate'
+        OnClick = VCButtonClick
+        TabOrder = 1
+      end
+    end
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 33
+    Top = 8
+    Width = 259
+    Caption = 'Kevin''s Screen Recorder'
+    Font.Height = -26
+    Font.Name = 'Impact'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Proc: TProcess
+    Active = False
+    Options = []
+    Priority = ppNormal
+    StartupOptions = []
+    ShowWindow = swoShow
+    WindowColumns = 0
+    WindowHeight = 0
+    WindowLeft = 0
+    WindowRows = 0
+    WindowTop = 0
+    WindowWidth = 0
+    FillAttribute = 0
+    XTermProgram = '/usr/bin/xterm'
+    left = 368
+    top = 280
+  end
+  object Timer: TTimer
+    Enabled = False
+    OnTimer = TimerTimer
+    left = 362
+    top = 15
+  end
+end
